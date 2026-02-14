@@ -1,11 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Valentine's Day Webpage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day!</title>
+    <style>
+        body {
+            background-color: #ffe6f2;
+            color: #cc0066;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px;
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+    </style>
 </head>
 <body>
     <h1>Happy Valentine's Day!</h1>
-    <img src="IMG_6311.jpeg" alt="Valentine Image 1">
-    <img src="IMG_6233.png" alt="Valentine Image 2">
+    <p>Sending lots of love your way!</p>
+    <img src="IMG_6311.jpeg" alt="Love Image 1">
+    <img src="IMG_6233.png" alt="Love Image 2">
 </body>
 </html>
