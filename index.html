@@ -10,16 +10,30 @@
       text-align: center;
       margin: 0;
       padding: 50px;
+      overflow: hidden; /* Prevent scrollbars from falling hearts */
     }
     h1 {
       color: crimson;
       font-size: 3em;
       margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.6),
+                   0 0 20px rgba(255, 0, 0, 0.4),
+                   0 0 30px rgba(255, 0, 0, 0.2);
+      animation: glow 2s ease-in-out infinite alternate;
     }
     p {
       font-size: 1.5em;
       color: #333;
       margin-bottom: 30px;
+      position: relative;
+      z-index: 2;
+      text-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px rgba(255,0,0,0.6), 0 0 20px rgba(255,0,0,0.4); }
+      to   { text-shadow: 0 0 20px rgba(255,0,0,0.8), 0 0 40px rgba(255,0,0,0.6); }
     }
     .valentine-img {
       max-width: 400px;
@@ -29,11 +43,20 @@
       box-shadow: 0 0 20px rgba(0,0,0,0.3);
       margin: 20px auto;
       display: block;
+      animation: zoom 6s ease-in-out infinite alternate;
+      position: relative;
+      z-index: 2;
+    }
+    @keyframes zoom {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
     }
     .hearts {
       font-size: 3em;
       margin-top: 20px;
       animation: float 3s infinite alternate;
+      position: relative;
+      z-index: 2;
     }
     @keyframes float {
       from { transform: translateY(0); }
@@ -48,9 +71,27 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      position: relative;
+      z-index: 2;
     }
     button:hover {
       background-color: darkred;
+    }
+    /* Falling hearts */
+    .falling-heart {
+      position: absolute;
+      top: -50px;
+      font-size: 2em;
+      color: crimson;
+      animation: fall linear forwards;
+      z-index: 1;
+      opacity: 0.8;
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
     }
   </style>
 </head>
@@ -63,13 +104,13 @@
   <div class="hearts">💖 💘 💝</div>
 
   <!-- Background music -->
-  <audio id="bg-music" autoplay loop>
+  <audio id="bg-music" loop>
     <source src="romantic.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
   <!-- Play/Pause button -->
-  <button onclick="toggleMusic()">Pause Music</button>
+  <button onclick="toggleMusic()">Play Music</button>
 
   <script>
     const music = document.getElementById('bg-music');
@@ -84,6 +125,29 @@
         button.textContent = "Play Music";
       }
     }
+
+    // Safari fix: start paused
+    window.addEventListener('load', () => {
+      button.textContent = "Play Music";
+    });
+
+    // Falling hearts generator
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('falling-heart');
+      heart.textContent = '💖';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (3 + Math.random() * 5) + 's';
+      document.body.appendChild(heart);
+
+      // Remove heart after animation
+      setTimeout(() => {
+        heart.remove();
+      }, 8000);
+    }
+
+    // Generate hearts every 500ms
+    setInterval(createHeart, 500);
   </script>
 </body>
 </html>
