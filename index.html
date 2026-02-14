@@ -1,53 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day!</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="gallery.js" defer></script>
+  <meta charset="UTF-8">
+  <title>Happy Valentine's Day ❤️</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 50px;
+    }
+    h1 {
+      color: crimson;
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.5em;
+      color: #333;
+      margin-bottom: 30px;
+    }
+    img {
+      max-width: 80%;
+      height: auto;
+      border: 5px solid white;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    .hearts {
+      font-size: 3em;
+      margin-top: 20px;
+      animation: float 3s infinite alternate;
+    }
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-20px); }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Happy Valentine's Day!</h1>
-        <p>Celebrate love with flowers and memories.</p>
-    </header>
-    <section id="flower-gallery">
-        <h2>Flower Gallery</h2>
-        <div class="gallery">
-            <div class="flower" data-name="Roses">
-                <img src="roses.jpg" alt="Roses">
-                <p>Roses</p>
-            </div>
-            <div class="flower" data-name="Tulips">
-                <img src="tulips.jpg" alt="Tulips">
-                <p>Tulips</p>
-            </div>
-            <div class="flower" data-name="Sunflowers">
-                <img src="sunflowers.jpg" alt="Sunflowers">
-                <p>Sunflowers</p>
-            </div>
-            <div class="flower" data-name="Orchids">
-                <img src="orchids.jpg" alt="Orchids">
-                <p>Orchids</p>
-            </div>
-            <div class="flower" data-name="Lilies">
-                <img src="lilies.jpg" alt="Lilies">
-                <p>Lilies</p>
-            </div>
-        </div>
-    </section>
-    <section id="personal-photos">
-        <h2>Our Memories</h2>
-        <div class="photos">
-            <img src="photo1.jpg" alt="Memory 1">
-            <img src="photo2.jpg" alt="Memory 2">
-            <img src="photo3.jpg" alt="Memory 3">
-            <img src="photo4.jpg" alt="Memory 4">
-        </div>
-    </section>
-    <footer>
-        <p>&copy; 2026 Forever Yours</p>
-    </footer>
+  <h1>Happy Valentine's Day, Khushboo! ❤️</h1>
+  <p>You make my world brighter every day.</p>
+  
+  <!-- Replace 'myimage.jpg' with the name of your local image file -->
+  <img src="IMG_6233.PNG" alt="Our Valentine Image">
+  
+  <div class="hearts">💖 💘 💝</div>
+
+  <!-- Background music -->
+  <audio autoplay loop>
+    <source src="romantic.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 </body>
 </html>
