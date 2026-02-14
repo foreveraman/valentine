@@ -1,89 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Valentine's Day!</title>
-    <style>
-        body {
-            background-color: #f8f0f7;
-            font-family: 'Arial', sans-serif;
-            color: #750a3a;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        h1 {
-            margin-top: 50px;
-            font-size: 3em;
-            animation: fadeIn 2s;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .message {
-            font-size: 1.5em;
-            margin: 20px;
-            animation: slideIn 2s;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-30px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        img {
-            width: 300px;
-            height: auto;
-            border-radius: 15px;
-            margin: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            animation: bounce 3s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-20px);
-            }
-            60% {
-                transform: translateY(-10px);
-            }
-        }
-
-        footer {
-            margin-top: 50px;
-            font-size: 1.2em;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="gallery.js" defer></script>
 </head>
-
 <body>
-    <h1>Happy Valentine's Day!</h1>
-    <div class="message">To my beautiful wife, you are my everything!</div>
-    <img src="IMG_6311.JPEG" alt="Romantic Image 1">
-    <img src="IMG_6233.PNG" alt="Romantic Image 2">
-    <div class="message">Every day with you is a wonderful addition to my life's journey. I love you!</div>
+    <header>
+        <h1>Happy Valentine's Day!</h1>
+        <p>Celebrate love with flowers and memories.</p>
+    </header>
+    <section id="flower-gallery">
+        <h2>Flower Gallery</h2>
+        <div class="gallery">
+            <div class="flower" data-name="Roses">
+                <img src="roses.jpg" alt="Roses">
+                <p>Roses</p>
+            </div>
+            <div class="flower" data-name="Tulips">
+                <img src="tulips.jpg" alt="Tulips">
+                <p>Tulips</p>
+            </div>
+            <div class="flower" data-name="Sunflowers">
+                <img src="sunflowers.jpg" alt="Sunflowers">
+                <p>Sunflowers</p>
+            </div>
+            <div class="flower" data-name="Orchids">
+                <img src="orchids.jpg" alt="Orchids">
+                <p>Orchids</p>
+            </div>
+            <div class="flower" data-name="Lilies">
+                <img src="lilies.jpg" alt="Lilies">
+                <p>Lilies</p>
+            </div>
+        </div>
+    </section>
+    <section id="personal-photos">
+        <h2>Our Memories</h2>
+        <div class="photos">
+            <img src="photo1.jpg" alt="Memory 1">
+            <img src="photo2.jpg" alt="Memory 2">
+            <img src="photo3.jpg" alt="Memory 3">
+            <img src="photo4.jpg" alt="Memory 4">
+        </div>
+    </section>
     <footer>
-        <p>With all my love, forever and always.</p>
+        <p>&copy; 2026 Forever Yours</p>
     </footer>
 </body>
-
 </html>
