@@ -1,11 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Valentine</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffcccb, #ff99c8);
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            animation: slideIn 1s;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .flowers {
+            background-image: url('https://example.com/flowers.png');
+            height: 200px;
+            background-size: cover;
+            animation: bloom 3s infinite alternate;
+        }
+        @keyframes bloom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        .heart {
+            display: inline-block;
+            color: red;
+            font-size: 2em;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
 </head>
 <body>
-    <h1>Happy Valentine’s Day!</h1>
-    <img src="IMG_6311.JPEG" alt="Image 6311">
-    <img src="IMG_6233.PNG" alt="Image 6233">
+    <h1>Happy Valentine's Day, My Love! <span class="heart">❤️</span></h1>
+    <div class="flowers"></div>
+    <p>You fill my life with joy, laughter, and endless love.</p>
+    <p>Thank you for being the wonderful person that you are.</p>
+    <p>Let’s make beautiful memories together today!</p>
 </body>
 </html>
