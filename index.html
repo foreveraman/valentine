@@ -21,12 +21,14 @@
       color: #333;
       margin-bottom: 30px;
     }
-    img {
-      max-width: 80%;
+    .valentine-img {
+      max-width: 400px;
       height: auto;
       border: 5px solid white;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      margin: 20px auto;
+      display: block;
     }
     .hearts {
       font-size: 3em;
@@ -37,33 +39,51 @@
       from { transform: translateY(0); }
       to { transform: translateY(-20px); }
     }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: crimson;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: darkred;
+    }
   </style>
 </head>
 <body>
   <h1>Happy Valentine's Day, Khushboo! ❤️</h1>
   <p>You make my world brighter every day.</p>
   
-  <!-- Replace 'myimage.jpg' with the name of your local image file -->
   <img src="myimage.jpg" alt="Our Valentine Image" class="valentine-img">
-<style>
-  .valentine-img {
-    max-width: 400px;   /* Limit width */
-    height: auto;       /* Keep proportions */
-    border: 5px solid white;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    margin: 20px auto;  /* Center with spacing */
-    display: block;     /* Ensure it centers */
-  }
-</style>
-
   
   <div class="hearts">💖 💘 💝</div>
 
   <!-- Background music -->
-  <audio autoplay loop>
+  <audio id="bg-music" autoplay loop>
     <source src="romantic.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
+
+  <!-- Play/Pause button -->
+  <button onclick="toggleMusic()">Pause Music</button>
+
+  <script>
+    const music = document.getElementById('bg-music');
+    const button = document.querySelector('button');
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        button.textContent = "Pause Music";
+      } else {
+        music.pause();
+        button.textContent = "Play Music";
+      }
+    }
+  </script>
 </body>
 </html>
